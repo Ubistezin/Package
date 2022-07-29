@@ -2,12 +2,17 @@ package org.example.Package.ru.netology.sqr.services;
 
 public class SQRService {
 
-    public int CalcSqrt(int x) {
-        for (int i = 10; i <= x; i++) {
-            if (i * i >= x) {
-                return i;
+    public int calculate(int min, int max) {
+        int count = 0;
+        for (int i = 10; i <= 99; i++) {
+            int sqr = i * i;
+            if (sqr >= min) {
+                if (sqr <= max) {
+                    count ++;
+
+                }
             }
         }
-        return -1;
+        return count;
     }
 }

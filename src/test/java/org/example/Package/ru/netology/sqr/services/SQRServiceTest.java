@@ -5,26 +5,32 @@ import org.junit.jupiter.api.Test;
 public class SQRServiceTest {
 
     @Test
-    public void CalcSqrttwelve() {
+    public void normal() {
         SQRService service = new SQRService();
 
-        int expected = 12;
-        int actual = service.CalcSqrt(144);
+        int expected = 3;
+        int actual = service.calculate(200,300);
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void CalcSqrtthirteen() {
+    public void minimal() {
         SQRService service = new SQRService();
 
-        int expected = 13;
-        int actual = service.CalcSqrt(169);
+        int expected = 1;
+        int actual = service.calculate(100,110);
 
         Assertions.assertEquals(expected, actual);
     }
+    @Test
+    public void maximal() {
+        SQRService service = new SQRService();
+
+        int expected = 1;
+        int actual = service.calculate(9801,9810);
+
+        Assertions.assertEquals(expected, actual);
+    }
+
 }
-// мне не понятен ващ комментарий о том что
-// "В условии прописано какие параметры должны быть у сервисного метода, а у вас не так:
-//Метод должен принимать два целых числа в параметрах - границы диапазона."
-// у меня диапазон 144 - 169 и в нём принимается два целых числа 12 и 13, не могу понять что не так
